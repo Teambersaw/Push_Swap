@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: teambersaw <teambersaw@student.42.fr>      +#+  +:+       +#+         #
+#    By: jrossett <jrossett@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/04 14:30:35 by jrossett          #+#    #+#              #
-#    Updated: 2022/01/05 16:06:05 by teambersaw       ###   ########.fr        #
+#    Updated: 2022/01/06 15:13:46 by jrossett         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,14 +14,14 @@ CC = gcc
 
 CFLAGS = -Wall -Wextra -Werror
 
-SRCS = push_swap.c push_swap_error.c \
+SRCS = push_swap.c push_swap_error.c push_swap_utils.c \
 
 OBJS = ${SRCS:.c=.o}
 
 NAME = push_swap
 
 ${NAME}: ${OBJS}
-		${CC} -o ${NAME} ${OBJS}
+		${CC} ${CFLAGS} -o ${NAME} ${OBJS}
 
 all: ${NAME}
 

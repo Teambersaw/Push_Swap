@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: teambersaw <teambersaw@student.42.fr>      +#+  +:+       +#+        */
+/*   By: jrossett <jrossett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/04 14:30:27 by jrossett          #+#    #+#             */
-/*   Updated: 2022/01/05 16:20:45 by teambersaw       ###   ########.fr       */
+/*   Updated: 2022/01/06 15:13:49 by jrossett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,6 @@
 
 int	main(int ac, char **av)
 {
-	if (ac == 1)
-		return (0);
-	if (ft_error(ac, av) == 0)
-	{
-		write(2, "error\n", 6);
-		return (0);
-	}
-
+	ft_check_error(ac, av);
 	return (0);
 }

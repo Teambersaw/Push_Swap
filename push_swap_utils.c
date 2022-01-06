@@ -1,28 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   push_swap_utils.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jrossett <jrossett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/04 14:30:33 by jrossett          #+#    #+#             */
-/*   Updated: 2022/01/06 15:13:44 by jrossett         ###   ########.fr       */
+/*   Created: 2022/01/06 14:38:40 by jrossett          #+#    #+#             */
+/*   Updated: 2022/01/06 15:13:38 by jrossett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#include "push_swap.h"
 
-# include <stdio.h>
-# include <unistd.h>
-# include <stdlib.h>
-# define MAX 2147483648
+int	ft_strlen(char *str)
+{
+	int	i;
 
-int		ft_strlen(char	*str);
-int		ft_strcmp(char *s1, char *s2);
-int		ft_error_check(int ac, char **av);
-int		ft_check_error(int ac, char **av);
-int		ft_atoi(const char *nptr);
-void	ft_error(void);
-
-#endif
+	i = 0;
+	if (str)
+		while (str[i])
+			i++;
+	return (i);
+}
