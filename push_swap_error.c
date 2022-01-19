@@ -6,7 +6,7 @@
 /*   By: jrossett <jrossett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/05 15:12:58 by teambersaw        #+#    #+#             */
-/*   Updated: 2022/01/06 17:12:06 by jrossett         ###   ########.fr       */
+/*   Updated: 2022/01/19 14:10:09 by jrossett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,16 +37,19 @@ int	ft_atoi(const char *nptr)
 		nptr++;
 	}
 	if (j == -1)
-		if (res > MAX)
+		if (res > 2147483648)
 			ft_error();
-	 
+	if (res > 2147483647 && j == 1)
+		ft_error();
 	return ((int) res);
 }
 
 int	ft_strcmp(char *s1, char *s2)
 {
-	if (ft_strlen(s1) != ft_strlen(s2))
-		return (1);
+	if (*s1 == '+')
+		s1++;
+	if (*s2 == '+')
+		s2++;
 	while (*s1 && *s2)
 	{
 		if (*s1 != *s2)
@@ -54,6 +57,8 @@ int	ft_strcmp(char *s1, char *s2)
 		s1++;
 		s2++;
 	}
+	if (*s1 != *s2)
+		return (1);
 	return (0);
 }
 
@@ -77,9 +82,8 @@ int	ft_error_check(int ac, char **av)
 			j++;
 		while (av[i][j])
 		{
-			if (av[i][j] < '0' || av[i][j] > '9')
+			if (av[i][j] < '0' || av[i][j++] > '9')
 				ft_error();
-			j++;
 		}
 		i++;
 	}
@@ -90,28 +94,24 @@ int	ft_check_error(int ac, char **av)
 {
 	int	i;
 
-	i = 1;
-	if (ac == 1)
-		exit(0);
-	while (av[i])
+	i = 0;
+	while (av[++i])
 	{
-		if (av[i][0] == '-' || av[i][0] == '+')
-		{
-			if (ft_strlen(av[i]) > 11)
-				ft_error();
-		}
-		else
-			if (ft_strlen(av[i]) > 10)
-				ft_error();
-		i++;
+		if ((av[i][0] == '-' || av[i][0] == '+') && ft_strlen(av[i]) > 11)
+			ft_error();
+		if ((av[i][0] != '-' && av[i][0] != '+') && ft_strlen(av[i]) > 10)
+			ft_error();
 	}
 	ft_error_check(ac, av);
 	i = 0;
 	while (av[++i])
 	{
-		if (av[i][0] == 0)
+		if (av[i][0] == 0 || (av[i][0] == '0' && ft_strlen(av[i]) > 1))
 			ft_error();
 		if ((av[i][0] == '+' || av[i][0] == '-') && ft_strlen(av[i]) == 1)
+			ft_error();
+		if ((av[i][0] == '+' || av[i][0] == '-') && av[i][1] == '0'
+			&& ft_strlen(av[i]) > 2)
 			ft_error();
 		ft_atoi(av[i]);
 	}
