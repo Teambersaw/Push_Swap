@@ -6,7 +6,7 @@
 /*   By: jrossett <jrossett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/05 15:12:58 by teambersaw        #+#    #+#             */
-/*   Updated: 2022/01/19 14:10:09 by jrossett         ###   ########.fr       */
+/*   Updated: 2022/01/19 14:39:38 by jrossett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ int	ft_atoi(const char *nptr)
 			ft_error();
 	if (res > 2147483647 && j == 1)
 		ft_error();
-	return ((int) res);
+	return ((int) res * j);
 }
 
 int	ft_strcmp(char *s1, char *s2)
