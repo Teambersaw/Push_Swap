@@ -6,7 +6,7 @@
 /*   By: jrossett <jrossett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/04 14:30:33 by jrossett          #+#    #+#             */
-/*   Updated: 2022/01/19 14:53:07 by jrossett         ###   ########.fr       */
+/*   Updated: 2022/01/20 15:04:41 by jrossett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ int		ft_strlen(char	*str);
 int		ft_strcmp(char *s1, char *s2);
 int		ft_error_check(int ac, char **av);
 int		ft_check_error(int ac, char **av);
+void	aff_stack(t_list *stack_a);
 int		ft_atoi(const char *nptr);
 void	ft_error(void);
 
