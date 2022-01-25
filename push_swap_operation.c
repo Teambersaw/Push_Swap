@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap_operation.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jrossett <jrossett@student.42.fr>          +#+  +:+       +#+        */
+/*   By: teambersaw <teambersaw@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/19 14:15:53 by jrossett          #+#    #+#             */
-/*   Updated: 2022/01/24 15:47:13 by jrossett         ###   ########.fr       */
+/*   Updated: 2022/01/25 19:22:17 by teambersaw       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ void	ft_ss(t_list **stack_a, t_list **stack_b, char *str)
 	ft_putstr(str);
 }
 
-void	ft_p(t_list **stack_a, t_list **stack_b, char *str)
+void	ft_push(t_list **stack_a, t_list **stack_b, char *str)
 {
 	t_list	*push;
 
@@ -48,7 +48,7 @@ void	ft_p(t_list **stack_a, t_list **stack_b, char *str)
 	ft_putstr(str);
 }
 
-void	ft_rr(t_list **stack, char *str)
+void	ft_reverse_rotate(t_list **stack, char *str)
 {
 	t_list	*push;
 
@@ -59,7 +59,7 @@ void	ft_rr(t_list **stack, char *str)
 
 void	ft_rrr(t_list **stack_a, t_list **stack_b, char *str)
 {
-	ft_rr(stack_a, 0);
-	ft_rr(stack_b, 0);
+	ft_reverse_rotate(stack_a, 0);
+	ft_reverse_rotate(stack_b, 0);
 	ft_putstr(str);
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jrossett <jrossett@student.42.fr>          +#+  +:+       +#+        */
+/*   By: teambersaw <teambersaw@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/04 14:30:33 by jrossett          #+#    #+#             */
-/*   Updated: 2022/01/24 15:43:45 by jrossett         ###   ########.fr       */
+/*   Updated: 2022/01/25 19:28:57 by teambersaw       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,29 +23,33 @@ typedef struct s_list
 	struct s_list	*next;
 }						t_list;
 
+void	ft_putstr(char *s);
 int		ft_strlen(char	*str);
-int		ft_strcmp(char *s1, char *s2);
+int		lstsize(t_list **stack);
+
+void	ft_error(void);
+int		ft_atoi(const char *nptr);
 int		ft_error_check(int ac, char **av);
 int		ft_check_error(int ac, char **av);
-t_list	*stack_create(int ac, char **av);
-void	lstadd_front(t_list **stack, t_list *tmp);
-void	ft_jules(void);
-void	lstadd_back(t_list **stack, t_list *tmp);
+int		ft_strcmp(char *s1, char *s2);
+
+int		ft_sorted(t_list **stack);
 t_list	*ft_lstnew(int content);
+t_list	*stack_create(int ac, char **av);
+void	little_algo(t_list	**stack);
 void	aff_stack(t_list *stack_a);
 
 void	ft_swap(t_list **stack, char *str);
 void	ft_ss(t_list **stack_a, t_list **stack_b, char *str);
-void	ft_p(t_list **stack_a, t_list **stack_b, char *str);
+void	ft_push(t_list **stack_a, t_list **stack_b, char *str);
+void	ft_rotate(t_list **stack, char *str);
+void	ft_rr(t_list **stack_a, t_list **stack_b, char *str);
+void	ft_reverse_rotate(t_list **stack, char *str);
 void	ft_rrr(t_list **stack_a, t_list **stack_b, char *str);
-void	ft_r(t_list **stack, char *str);
-void	ft_r2(t_list **stack_a, t_list **stack_b, char *str);
-void	ft_rr(t_list **stack, char *str);
 
-int		ft_atoi(const char *nptr);
 t_list	*ft_pop(t_list **stack_a);
 t_list	*ft_pop_bottom(t_list **stack);
-void	ft_putstr(char *s);
-void	ft_error(void);
+void	lstadd_front(t_list **stack, t_list *tmp);
+void	lstadd_back(t_list **stack, t_list *tmp);
 
 #endif
