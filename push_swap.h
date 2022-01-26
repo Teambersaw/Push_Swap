@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jrossett <jrossett@student.42.fr>          +#+  +:+       +#+        */
+/*   By: teambersaw <teambersaw@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/04 14:30:33 by jrossett          #+#    #+#             */
-/*   Updated: 2022/01/26 16:55:52 by jrossett         ###   ########.fr       */
+/*   Updated: 2022/01/26 19:12:37 by teambersaw       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ int		ft_min_index(t_list **stack);
 void	ft_three(t_list **stack);
 void	ft_four(t_list **stack, t_list **stack_b);
 void	ft_five(t_list **stack, t_list **stack_b);
+void	little_algo(t_list	**stack, t_list **stack_b);
 
 void	ft_error(void);
 int		ft_atoi(const char *nptr);
@@ -41,8 +42,6 @@ int		ft_strcmp(char *s1, char *s2);
 int		ft_sorted(t_list **stack);
 t_list	*ft_lstnew(int content);
 t_list	*stack_create(int ac, char **av);
-void	little_algo(t_list	**stack, t_list **stack_b);
-void	aff_stack(t_list *stack_a);
 
 void	ft_swap(t_list **stack, char *str);
 void	ft_ss(t_list **stack_a, t_list **stack_b, char *str);
@@ -56,5 +55,7 @@ t_list	*ft_pop(t_list **stack_a);
 t_list	*ft_pop_bottom(t_list **stack);
 void	lstadd_front(t_list **stack, t_list *tmp);
 void	lstadd_back(t_list **stack, t_list *tmp);
+
+void	aff_stack(t_list *stack_a);
 
 #endif

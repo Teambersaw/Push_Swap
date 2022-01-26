@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: jrossett <jrossett@student.42.fr>          +#+  +:+       +#+         #
+#    By: teambersaw <teambersaw@student.42.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/04 14:30:35 by jrossett          #+#    #+#              #
-#    Updated: 2022/01/26 13:53:32 by jrossett         ###   ########.fr        #
+#    Updated: 2022/01/26 19:08:24 by teambersaw       ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ CC=gcc
 CFLAGS=-Wall -Wextra -Werror
 DIR_OBJS=objs/
 SRCS=push_swap.c push_swap_error.c push_swap_utils.c push_swap_operation.c ft_pop_push.c \
-	push_swap_operation2.c little_algo.c
+	push_swap_operation2.c little_algo.c test.c
 OBJS=$(patsubst %.c, $(DIR_OBJS)%.o, $(SRCS))
 NAME=push_swap
 

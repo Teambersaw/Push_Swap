@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jrossett <jrossett@student.42.fr>          +#+  +:+       +#+        */
+/*   By: teambersaw <teambersaw@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/04 14:30:27 by jrossett          #+#    #+#             */
-/*   Updated: 2022/01/26 13:56:00 by jrossett         ###   ########.fr       */
+/*   Updated: 2022/01/26 19:10:25 by teambersaw       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,27 +27,6 @@ int	ft_sorted(t_list **stack)
 		tmp = tmp->next;
 	}
 	return (1);
-}
-
-void	little_algo(t_list	**stack, t_list **stack_b)
-{
-	if (ft_sorted(stack))
-		exit(0);
-	if (lstsize(stack) == 2)
-	{
-		ft_swap(stack, "sa\n");
-		exit(0);
-	}
-	if (lstsize(stack) == 3)
-	{
-		ft_three(stack);
-		exit(0);
-	}
-	if (lstsize(stack) == 4)
-	{
-		ft_four(stack, stack_b);
-		exit(0);
-	}
 }
 
 t_list	*ft_lstnew(int content)
@@ -74,21 +53,6 @@ t_list	*stack_create(int ac, char **av)
 		lstadd_front(&stack_a, tmp);
 	}
 	return (stack_a);
-}
-
-void	aff_stack(t_list *stack)
-{
-	t_list	*tmp;
-
-	if (!stack)
-		return ;
-	tmp = stack;
-	while (tmp)
-	{
-		printf("%d -> ", tmp->nbr);
-		tmp = tmp->next;
-	}
-	printf("\n");
 }
 
 int	main(int ac, char **av)

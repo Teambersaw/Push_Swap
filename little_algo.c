@@ -3,17 +3,40 @@
 /*                                                        :::      ::::::::   */
 /*   little_algo.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jrossett <jrossett@student.42.fr>          +#+  +:+       +#+        */
+/*   By: teambersaw <teambersaw@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/26 13:53:08 by jrossett          #+#    #+#             */
-/*   Updated: 2022/01/26 16:58:45 by jrossett         ###   ########.fr       */
+/*   Updated: 2022/01/26 19:09:08 by teambersaw       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-//void	ft_five(t_list **stack, t_list **stack_b);
-//{}
+void	little_algo(t_list	**stack, t_list **stack_b)
+{
+	if (ft_sorted(stack))
+		exit(0);
+	if (lstsize(stack) == 2)
+	{
+		ft_swap(stack, "sa\n");
+		exit(0);
+	}
+	if (lstsize(stack) == 3)
+	{
+		ft_three(stack);
+		exit(0);
+	}
+	if (lstsize(stack) == 4)
+	{
+		ft_four(stack, stack_b);
+		exit(0);
+	}
+		if (lstsize(stack) == 5)
+	{
+		ft_five(stack, stack_b);
+		exit(0);
+	}
+}
 
 int	ft_min_index(t_list **stack)
 {
@@ -39,6 +62,32 @@ int	ft_min_index(t_list **stack)
 	return (i);
 }
 
+void	ft_five(t_list **stack, t_list **stack_b)
+{
+	int	i;
+
+	i = ft_min_index(stack);
+	if (i == 2)
+		ft_swap(stack, "sa\n");
+	if (i == 3)
+	{
+		ft_reverse_rotate(stack, "rra\n");
+		ft_reverse_rotate(stack, "rra\n");
+		ft_reverse_rotate(stack, "rra\n");
+	}
+	if (i == 4)
+	{
+		ft_reverse_rotate(stack, "rra\n");
+		ft_reverse_rotate(stack, "rra\n");
+	}
+	if (i == 5)
+		ft_reverse_rotate(stack, "rra\n");		
+	ft_push(stack_b, stack, "pb\n");
+	ft_four(stack, stack_b);
+	ft_push(stack, stack_b, "pa\n");
+	aff_stack(*stack);
+}
+
 void	ft_four(t_list **stack, t_list **stack_b)
 {
 	int	i;
@@ -56,7 +105,6 @@ void	ft_four(t_list **stack, t_list **stack_b)
 	ft_push(stack_b, stack, "pb\n");
 	ft_three(stack);
 	ft_push(stack, stack_b, "pa\n");
-	aff_stack(*stack);
 }
 
 void	ft_three(t_list **stack)
@@ -79,5 +127,4 @@ void	ft_three(t_list **stack)
 		if (first > mid && mid > last)
 			ft_rotate(stack, "ra\n");
 	}
-	aff_stack(*stack);
 }
