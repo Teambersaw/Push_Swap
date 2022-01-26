@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: teambersaw <teambersaw@student.42.fr>      +#+  +:+       +#+        */
+/*   By: jrossett <jrossett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/04 14:30:33 by jrossett          #+#    #+#             */
-/*   Updated: 2022/01/25 19:28:57 by teambersaw       ###   ########.fr       */
+/*   Updated: 2022/01/26 16:55:52 by jrossett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,11 @@ void	ft_putstr(char *s);
 int		ft_strlen(char	*str);
 int		lstsize(t_list **stack);
 
+int		ft_min_index(t_list **stack);
+void	ft_three(t_list **stack);
+void	ft_four(t_list **stack, t_list **stack_b);
+void	ft_five(t_list **stack, t_list **stack_b);
+
 void	ft_error(void);
 int		ft_atoi(const char *nptr);
 int		ft_error_check(int ac, char **av);
@@ -36,7 +41,7 @@ int		ft_strcmp(char *s1, char *s2);
 int		ft_sorted(t_list **stack);
 t_list	*ft_lstnew(int content);
 t_list	*stack_create(int ac, char **av);
-void	little_algo(t_list	**stack);
+void	little_algo(t_list	**stack, t_list **stack_b);
 void	aff_stack(t_list *stack_a);
 
 void	ft_swap(t_list **stack, char *str);

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: teambersaw <teambersaw@student.42.fr>      +#+  +:+       +#+        */
+/*   By: jrossett <jrossett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/04 14:30:27 by jrossett          #+#    #+#             */
-/*   Updated: 2022/01/25 19:14:20 by teambersaw       ###   ########.fr       */
+/*   Updated: 2022/01/26 13:56:00 by jrossett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,13 +29,23 @@ int	ft_sorted(t_list **stack)
 	return (1);
 }
 
-void	little_algo(t_list	**stack)
+void	little_algo(t_list	**stack, t_list **stack_b)
 {
 	if (ft_sorted(stack))
 		exit(0);
 	if (lstsize(stack) == 2)
 	{
 		ft_swap(stack, "sa\n");
+		exit(0);
+	}
+	if (lstsize(stack) == 3)
+	{
+		ft_three(stack);
+		exit(0);
+	}
+	if (lstsize(stack) == 4)
+	{
+		ft_four(stack, stack_b);
 		exit(0);
 	}
 }
@@ -84,15 +94,15 @@ void	aff_stack(t_list *stack)
 int	main(int ac, char **av)
 {
 	t_list	*stack_a;
-	//t_list	*stack_b;
+	t_list	*stack_b;
 
-	//stack_b = NULL;
+	stack_b = NULL;
 	if (ac == 1)
 		exit(0);
 	ft_check_error(ac, av);
 	stack_a = stack_create(ac, av);
 	aff_stack(stack_a);
-	little_algo(&stack_a);
+	little_algo(&stack_a, &stack_b);
 	printf("oui\n");
 	return (0);
 }
