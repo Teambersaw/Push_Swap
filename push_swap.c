@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: teambersaw <teambersaw@student.42.fr>      +#+  +:+       +#+        */
+/*   By: jrossett <jrossett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/04 14:30:27 by jrossett          #+#    #+#             */
-/*   Updated: 2022/01/26 19:10:25 by teambersaw       ###   ########.fr       */
+/*   Updated: 2022/01/27 15:24:29 by jrossett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,8 +65,7 @@ int	main(int ac, char **av)
 		exit(0);
 	ft_check_error(ac, av);
 	stack_a = stack_create(ac, av);
-	aff_stack(stack_a);
 	little_algo(&stack_a, &stack_b);
-	printf("oui\n");
+	big_algo(&stack_a, &stack_b);
 	return (0);
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   little_algo.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: teambersaw <teambersaw@student.42.fr>      +#+  +:+       +#+        */
+/*   By: jrossett <jrossett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/26 13:53:08 by jrossett          #+#    #+#             */
-/*   Updated: 2022/01/26 19:09:08 by teambersaw       ###   ########.fr       */
+/*   Updated: 2022/01/27 15:05:25 by jrossett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ void	little_algo(t_list	**stack, t_list **stack_b)
 		ft_four(stack, stack_b);
 		exit(0);
 	}
-		if (lstsize(stack) == 5)
+	if (lstsize(stack) == 5)
 	{
 		ft_five(stack, stack_b);
 		exit(0);
@@ -81,11 +81,10 @@ void	ft_five(t_list **stack, t_list **stack_b)
 		ft_reverse_rotate(stack, "rra\n");
 	}
 	if (i == 5)
-		ft_reverse_rotate(stack, "rra\n");		
+		ft_reverse_rotate(stack, "rra\n");
 	ft_push(stack_b, stack, "pb\n");
 	ft_four(stack, stack_b);
 	ft_push(stack, stack_b, "pa\n");
-	aff_stack(*stack);
 }
 
 void	ft_four(t_list **stack, t_list **stack_b)
