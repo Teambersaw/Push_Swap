@@ -6,7 +6,7 @@
 /*   By: teambersaw <teambersaw@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/26 19:10:05 by teambersaw        #+#    #+#             */
-/*   Updated: 2022/01/26 19:10:25 by teambersaw       ###   ########.fr       */
+/*   Updated: 2022/01/30 21:55:21 by teambersaw       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,3 +26,8 @@ void	aff_stack(t_list *stack)
 	}
 	printf("\n");
 }
+
+	// printf("size valeur: %d\n", i);
+	// printf("index valeur: %d\n", index);
+	// printf("stack b\n");
+	// printf("cost valeur: %d\n", cost);

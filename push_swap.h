@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jrossett <jrossett@student.42.fr>          +#+  +:+       +#+        */
+/*   By: teambersaw <teambersaw@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/04 14:30:33 by jrossett          #+#    #+#             */
-/*   Updated: 2022/01/28 11:46:07 by jrossett         ###   ########.fr       */
+/*   Updated: 2022/01/30 22:19:49 by teambersaw       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,9 @@ int		find_index_cost(t_list	**stack_b, t_list	*lowcost);
 void	ft_push_lowcost(t_list **stack_a, t_list **stack_b, t_list *lowcost);
 void	ft_top_lowcost(t_list **stack_b, int index);
 
-int		ft_cost(t_list **stack_a, t_list *stack_b);
+int		ft_cost(t_list **stack_a, t_list **stack_b, t_list *tmp);
+int		ft_cost_top_b(t_list **stack_b, t_list *tmp);
+int		ft_cost_push_a(t_list **stack_a, t_list *tmp);
 
 void	aff_stack(t_list *stack_a);
 
