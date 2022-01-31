@@ -3,14 +3,29 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jrossett <jrossett@student.42.fr>          +#+  +:+       +#+        */
+/*   By: teambersaw <teambersaw@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/04 14:30:27 by jrossett          #+#    #+#             */
-/*   Updated: 2022/01/31 14:26:56 by jrossett         ###   ########.fr       */
+/*   Updated: 2022/01/31 23:35:51 by teambersaw       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+void	free_stack(t_list *stack)
+{
+	t_list	*tmp;
+	t_list	*v;
+
+	tmp = stack;
+	while (tmp)
+	{
+		v = tmp->next;
+		free(tmp);
+		tmp = v;
+	}
+	stack = NULL;
+}
 
 int	ft_sorted(t_list **stack)
 {
@@ -67,7 +82,8 @@ int	main(int ac, char **av)
 	stack_a = stack_create(ac, av);
 	little_algo(&stack_a, &stack_b);
 	big_algo(&stack_a, &stack_b);
-	aff_stack(stack_a);
-	aff_stack(stack_b);
+	free_stack(stack_a);
+	stack_b = NULL;
+	//aff_stack(stack_a);
 	return (0);
 }

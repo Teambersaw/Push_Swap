@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lowcost.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jrossett <jrossett@student.42.fr>          +#+  +:+       +#+        */
+/*   By: teambersaw <teambersaw@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/28 11:34:27 by jrossett          #+#    #+#             */
-/*   Updated: 2022/01/31 15:06:15 by jrossett         ###   ########.fr       */
+/*   Updated: 2022/01/31 23:20:48 by teambersaw       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,41 +50,61 @@ int	find_index_cost(t_list	**stack_b, t_list *lowcost)
 	return (0);
 }
 
-void	ft_top_lowcost(t_list **stack_b, int index)
+void	ft_top_lowcost(t_list **stack, int index, char c)
 {
-	int	i;
+	int	size;
 	int	j;
 
-	i = lstsize(stack_b);
-	j = i - index + 1;
-	if (i / 2 >= index)
+	size = lstsize(stack);
+	j = size - index + 1;
+	if (size / 2 >= index)
 	{
 		while (1 < index--)
-			ft_rotate(stack_b, "rb\n");
+		{
+			if (c == 'a')
+				ft_rotate(stack, "ra\n");
+			else
+				ft_rotate(stack, "rb\n");
+		}
 	}
-	else if (i / 2 < index)
+	else if (size / 2 < index)
 	{
 		while (j--)
-			ft_reverse_rotate(stack_b, "rrb\n");
+		{
+			if (c == 'a')
+				ft_reverse_rotate(stack, "rra\n");
+			else
+				ft_reverse_rotate(stack, "rrb\n");
+		}
 	}
 }
 
-void	ft_bot_lowcost(t_list **stack_b, int index)
+void	ft_bot_lowcost(t_list **stack, int index, char c)
 {
-	int	i;
+	int	size;
 	int	j;
 
-	i = lstsize(stack_b);
-	j = i - index + 1;
-	if (i / 2 >= index)
+	size = lstsize(stack);
+	j = size - index + 1;
+	if (size / 2 >= index)
 	{
 		while (1 <= index--)
-			ft_rotate(stack_b, "rb\n");
+		{
+			if (c == 'a')
+				ft_rotate(stack, "ra\n");
+			else
+				ft_rotate(stack, "rb\n");
+		}
 	}
-	else if (i / 2 < index)
+	else if (size / 2 < index)
 	{
 		while (1 < j--)
-			ft_reverse_rotate(stack_b, "rrb\n");
+		{
+			if (c == 'a')
+				ft_reverse_rotate(stack, "rra\n");
+			else
+				ft_reverse_rotate(stack, "rrb\n");
+		}
 	}
 }
 
@@ -94,6 +114,7 @@ void	ft_push_lowcost(t_list **stack_a, t_list **stack_b, t_list *lowcost)
 
 	index = find_index_cost(stack_b, lowcost);
 	if (index > 1)
-		ft_top_lowcost(stack_b, index);
+		ft_top_lowcost(stack_b, index, 'b');
+	ft_push_a(stack_a, stack_b);
 	ft_push(stack_a, stack_b, "pa\n");
 }
