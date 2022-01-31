@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lowcost.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: teambersaw <teambersaw@student.42.fr>      +#+  +:+       +#+        */
+/*   By: jrossett <jrossett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/28 11:34:27 by jrossett          #+#    #+#             */
-/*   Updated: 2022/01/30 21:54:43 by teambersaw       ###   ########.fr       */
+/*   Updated: 2022/01/31 15:06:15 by jrossett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,11 +60,30 @@ void	ft_top_lowcost(t_list **stack_b, int index)
 	if (i / 2 >= index)
 	{
 		while (1 < index--)
-			ft_rotate(stack_b, "rb\n");	
+			ft_rotate(stack_b, "rb\n");
 	}
 	else if (i / 2 < index)
 	{
 		while (j--)
+			ft_reverse_rotate(stack_b, "rrb\n");
+	}
+}
+
+void	ft_bot_lowcost(t_list **stack_b, int index)
+{
+	int	i;
+	int	j;
+
+	i = lstsize(stack_b);
+	j = i - index + 1;
+	if (i / 2 >= index)
+	{
+		while (1 <= index--)
+			ft_rotate(stack_b, "rb\n");
+	}
+	else if (i / 2 < index)
+	{
+		while (1 < j--)
 			ft_reverse_rotate(stack_b, "rrb\n");
 	}
 }

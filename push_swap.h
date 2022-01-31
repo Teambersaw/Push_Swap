@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: teambersaw <teambersaw@student.42.fr>      +#+  +:+       +#+        */
+/*   By: jrossett <jrossett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/04 14:30:33 by jrossett          #+#    #+#             */
-/*   Updated: 2022/01/30 22:19:49 by teambersaw       ###   ########.fr       */
+/*   Updated: 2022/01/31 15:28:33 by jrossett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ typedef struct s_list
 void	ft_putstr(char *s);
 int		ft_strlen(char	*str);
 int		lstsize(t_list **stack);
+t_list	*ft_lstlast(t_list *lst);
 
 void	ft_error(void);
 int		ft_atoi(const char *nptr);
@@ -59,14 +60,20 @@ void	little_algo(t_list	**stack, t_list **stack_b);
 void	big_algo(t_list **stack_a, t_list **stack_b);
 void	ft_start(t_list **stack_a, t_list **stack_b);
 
+
 t_list	*ft_lowcost(t_list **stack_a, t_list **stack_b);
 int		find_index_cost(t_list	**stack_b, t_list	*lowcost);
 void	ft_push_lowcost(t_list **stack_a, t_list **stack_b, t_list *lowcost);
 void	ft_top_lowcost(t_list **stack_b, int index);
 
 int		ft_cost(t_list **stack_a, t_list **stack_b, t_list *tmp);
-int		ft_cost_top_b(t_list **stack_b, t_list *tmp);
+int		ft_cost_top(t_list **stack_b, t_list *tmp);
+int		ft_cost_bot(t_list **stack, t_list *tmp);
 int		ft_cost_push_a(t_list **stack_a, t_list *tmp);
+int		ft_cost_usual(t_list **stack_a, t_list *tmp);
+
+int		max_nbr(t_list **stack);
+int		min_nbr(t_list **stack);
 
 void	aff_stack(t_list *stack_a);
 

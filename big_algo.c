@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   big_algo.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: teambersaw <teambersaw@student.42.fr>      +#+  +:+       +#+        */
+/*   By: jrossett <jrossett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/28 10:06:02 by jrossett          #+#    #+#             */
-/*   Updated: 2022/01/30 21:57:46 by teambersaw       ###   ########.fr       */
+/*   Updated: 2022/01/31 14:29:35 by jrossett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,9 +27,6 @@ void	big_algo(t_list **stack_a, t_list **stack_b)
 	t_list	*lowcost;
 
 	ft_start(stack_a, stack_b);
-	while (*stack_b)
-	{
-		lowcost = ft_lowcost(stack_a, stack_b);
-		ft_push_lowcost(stack_a, stack_b, lowcost);
-	}
+	lowcost = ft_lowcost(stack_a, stack_b);
+	ft_push_lowcost(stack_a, stack_b, lowcost);
 }

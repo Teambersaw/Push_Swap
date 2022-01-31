@@ -1,62 +1,45 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap_utils.c                                  :+:      :+:    :+:   */
+/*   max_min.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jrossett <jrossett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/06 14:38:40 by jrossett          #+#    #+#             */
-/*   Updated: 2022/01/31 13:52:50 by jrossett         ###   ########.fr       */
+/*   Created: 2022/01/31 14:16:09 by jrossett          #+#    #+#             */
+/*   Updated: 2022/01/31 15:12:45 by jrossett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	lstsize(t_list **stack)
+int	min_nbr(t_list **stack)
 {
 	t_list	*tmp;
-	int		i;
+	int		min;
 
-	i = 0;
 	tmp = *stack;
+	min = tmp->nbr;
 	while (tmp)
 	{
+		if (tmp->nbr < min)
+			min = tmp->nbr;
 		tmp = tmp->next;
-		i++;
 	}
-	return (i);
+	return (min);
 }
 
-t_list	*ft_lstlast(t_list *lst)
+int	max_nbr(t_list **stack)
 {
-	if (lst == NULL)
-		return (NULL);
-	while (lst && lst -> next)
-		lst = lst -> next;
-	return (lst);
-}
+	t_list	*tmp;
+	int		max;
 
-int	ft_strlen(char *str)
-{
-	int	i;
-
-	i = 0;
-	if (str)
-		while (str[i])
-			i++;
-	return (i);
-}
-
-void	ft_putstr(char *s)
-{
-	int	i;
-
-	i = 0;
-	if (s)
+	tmp = *stack;
+	max = tmp->nbr;
+	while (tmp)
 	{
-		while (s[i])
-		{
-			write(1, &s[i++], 1);
-		}
+		if (tmp->nbr > max)
+			max = tmp->nbr;
+		tmp = tmp->next;
 	}
+	return (max);
 }
