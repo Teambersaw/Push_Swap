@@ -3,39 +3,26 @@
 /*                                                        :::      ::::::::   */
 /*   little_algo.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jrossett <jrossett@student.42.fr>          +#+  +:+       +#+        */
+/*   By: teambersaw <teambersaw@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/26 13:53:08 by jrossett          #+#    #+#             */
-/*   Updated: 2022/01/27 15:05:25 by jrossett         ###   ########.fr       */
+/*   Updated: 2022/02/01 21:56:02 by teambersaw       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
 void	little_algo(t_list	**stack, t_list **stack_b)
-{
-	if (ft_sorted(stack))
-		exit(0);
+{	
 	if (lstsize(stack) == 2)
-	{
 		ft_swap(stack, "sa\n");
-		exit(0);
-	}
-	if (lstsize(stack) == 3)
-	{
+	else if (lstsize(stack) == 3)
 		ft_three(stack);
-		exit(0);
-	}
-	if (lstsize(stack) == 4)
-	{
+	else if (lstsize(stack) == 4)
 		ft_four(stack, stack_b);
-		exit(0);
-	}
-	if (lstsize(stack) == 5)
-	{
+	else if (lstsize(stack) == 5)
 		ft_five(stack, stack_b);
-		exit(0);
-	}
+	return ;
 }
 
 int	ft_min_index(t_list **stack)

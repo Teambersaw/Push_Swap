@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jrossett <jrossett@student.42.fr>          +#+  +:+       +#+        */
+/*   By: teambersaw <teambersaw@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/04 14:30:27 by jrossett          #+#    #+#             */
-/*   Updated: 2022/02/01 17:02:37 by jrossett         ###   ########.fr       */
+/*   Updated: 2022/02/01 21:57:45 by teambersaw       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,9 +80,17 @@ int	main(int ac, char **av)
 		exit(0);
 	ft_check_error(ac, av);
 	stack_a = stack_create(ac, av);
-	little_algo(&stack_a, &stack_b);
-	big_algo(&stack_a, &stack_b);
+	if (ft_sorted(&stack_a))
+	{
+		free_stack(stack_a);
+		free_stack(stack_b);
+		exit(0);
+	}
+	if (lstsize(&stack_a) <= 5)
+		little_algo(&stack_a, &stack_b);
+	else
+		big_algo(&stack_a, &stack_b);
 	free_stack(stack_a);
-	stack_b = NULL;
+	free_stack(stack_b);
 	return (0);
 }
