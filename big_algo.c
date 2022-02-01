@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   big_algo.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jrossett <jrossett@student.42.fr>          +#+  +:+       +#+        */
+/*   By: teambersaw <teambersaw@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/28 10:06:02 by jrossett          #+#    #+#             */
-/*   Updated: 2022/02/01 16:42:03 by jrossett         ###   ########.fr       */
+/*   Updated: 2022/02/01 22:52:12 by teambersaw       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,10 +24,13 @@ void	ft_push_mediane(t_list **stack_a, t_list **stack_b, int mediane)
 		else
 			ft_rotate(stack_a, "ra\n");
 	}
-	while ((*stack_a)->next->next)
-		ft_push(stack_b, stack_a, "pb\n");
-	if ((*stack_a)->nbr > (*stack_a)->next->nbr)
-		ft_swap(stack_a, "sa\n");
+	if (lstsize(stack_a) > 5)
+		while ((*stack_a)->next->next->next->next->next)
+			ft_push(stack_b, stack_a, "pb\n");
+	else
+		while ((*stack_a)->next->next)
+			ft_push(stack_b, stack_a, "pb\n");
+	ft_five(stack_a, stack_b);
 }
 
 int	ft_mediane(t_list **stack_a)

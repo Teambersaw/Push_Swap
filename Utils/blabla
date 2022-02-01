@@ -5,3 +5,22 @@
 push_swap.c push_swap_error.c push_swap_utils.c push_swap_operation.c ft_pop_push.c \
 	push_swap_operation2.c little_algo.c big_algo.c ft_cost.c ft_lowcost.c \
 	max_min.c
+
+
+	int		size;
+
+	size = lstsize(stack_a) / 2;
+	while (lstsize(stack_b) != size)
+	{
+		if ((*stack_a)->nbr > mediane)
+			ft_push(stack_b, stack_a, "pb\n");
+		else
+			ft_rotate(stack_a, "ra\n");
+	}
+	if (lstsize(stack_a) > 5)
+		while ((*stack_a)->next->next->next->next->next)
+			ft_push(stack_b, stack_a, "pb\n");
+	else
+		while ((*stack_a)->next->next)
+			ft_push(stack_b, stack_a, "pb\n");
+	ft_five(stack_a, stack_b);
