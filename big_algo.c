@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   big_algo.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: teambersaw <teambersaw@student.42.fr>      +#+  +:+       +#+        */
+/*   By: jrossett <jrossett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/28 10:06:02 by jrossett          #+#    #+#             */
-/*   Updated: 2022/01/31 23:21:53 by teambersaw       ###   ########.fr       */
+/*   Updated: 2022/02/01 12:12:38 by jrossett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,14 +78,14 @@ void	big_algo(t_list **stack_a, t_list **stack_b)
 	int		index;
 
 	ft_start(stack_a, stack_b);
-	while(*stack_b)
+	while (*stack_b)
 	{
 		lowcost = ft_lowcost(stack_a, stack_b);
 		ft_push_lowcost(stack_a, stack_b, lowcost);
 	}
 	max = *stack_a;
 	while (max->nbr != max_nbr(stack_a))
-			max = max->next;
+		max = max->next;
 	index = find_index_cost(stack_a, max);
 	ft_bot_lowcost(stack_a, index, 'a');
 }

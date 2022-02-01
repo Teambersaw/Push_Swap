@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: teambersaw <teambersaw@student.42.fr>      +#+  +:+       +#+        */
+/*   By: jrossett <jrossett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/04 14:30:33 by jrossett          #+#    #+#             */
-/*   Updated: 2022/01/31 23:20:16 by teambersaw       ###   ########.fr       */
+/*   Updated: 2022/02/01 11:06:49 by jrossett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,7 @@ int		ft_strcmp(char *s1, char *s2);
 int		ft_sorted(t_list **stack);
 t_list	*ft_lstnew(int content);
 t_list	*stack_create(int ac, char **av);
+void	free_stack(t_list *stack);
 
 t_list	*ft_pop(t_list **stack_a);
 t_list	*ft_pop_bottom(t_list **stack);

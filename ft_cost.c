@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_cost.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: teambersaw <teambersaw@student.42.fr>      +#+  +:+       +#+        */
+/*   By: jrossett <jrossett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/28 11:04:10 by jrossett          #+#    #+#             */
-/*   Updated: 2022/01/31 19:34:11 by teambersaw       ###   ########.fr       */
+/*   Updated: 2022/02/01 13:55:19 by jrossett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,24 +14,24 @@
 
 int	ft_cost_push_a(t_list **stack_a, t_list *tmp)
 {
-	t_list	*max;
 	int		cost;
 	int		nbr;
+	t_list	*index;
 
 	cost = 0;
 	nbr = tmp->nbr;
-	max = *stack_a;
+	index = *stack_a;
 	if (nbr > max_nbr(stack_a))
 	{
-		while (max->nbr != max_nbr(stack_a))
-			max = max->next;
-		cost = ft_cost_bot(stack_a, max);
+		while (index->nbr != max_nbr(stack_a))
+			index = index->next;
+		cost = ft_cost_bot(stack_a, index);
 	}
 	else if (nbr < min_nbr(stack_a))
 	{
-		while (max->nbr != min_nbr(stack_a))
-			max = max->next;
-		cost = ft_cost_top(stack_a, max);
+		while (index->nbr != min_nbr(stack_a))
+			index = index->next;
+		cost = ft_cost_top(stack_a, index);
 	}
 	else
 		cost = ft_cost_usual(stack_a, tmp);
@@ -42,16 +42,11 @@ int	ft_cost_usual(t_list **stack_a, t_list *tmp)
 {
 	t_list	*prev;
 	t_list	*after;
-	t_list	*last;
 	int		cost;
 
 	prev = *stack_a;
 	after = (*stack_a)->next;
-	last = ft_lstlast(*stack_a);
 	cost = 0;
-	if ((last->nbr > tmp->nbr && (*stack_a)->nbr > tmp->nbr) ||
-		(last->nbr < tmp->nbr && (*stack_a)->nbr < tmp->nbr))
-		return (cost);
 	while (after)
 	{
 		if (tmp->nbr > prev->nbr && tmp->nbr < after->nbr)
