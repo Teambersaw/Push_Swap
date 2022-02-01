@@ -6,7 +6,7 @@
 /*   By: jrossett <jrossett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/04 14:30:33 by jrossett          #+#    #+#             */
-/*   Updated: 2022/02/01 11:06:49 by jrossett         ###   ########.fr       */
+/*   Updated: 2022/02/01 15:41:20 by jrossett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,9 +59,10 @@ void	ft_five(t_list **stack, t_list **stack_b);
 void	little_algo(t_list	**stack, t_list **stack_b);
 
 void	big_algo(t_list **stack_a, t_list **stack_b);
-void	ft_start(t_list **stack_a, t_list **stack_b);
+int		ft_mediane(t_list **stack_a);
 void	ft_push_a(t_list **stack_a, t_list **stack_b);
 void	ft_push_usual(t_list **stack_a, t_list **sb);
+void	ft_push_mediane(t_list **stack_a, t_list **stack_b, int mediane);
 
 t_list	*ft_lowcost(t_list **stack_a, t_list **stack_b);
 int		find_index_cost(t_list **stack_b, t_list *lowcost);
