@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jrossett <jrossett@student.42.fr>          +#+  +:+       +#+        */
+/*   By: teambersaw <teambersaw@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/04 14:30:33 by jrossett          #+#    #+#             */
-/*   Updated: 2022/02/01 15:41:20 by jrossett         ###   ########.fr       */
+/*   Updated: 2022/02/08 16:44:03 by teambersaw       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,6 +78,9 @@ int		ft_cost_usual(t_list **stack_a, t_list *tmp);
 
 int		max_nbr(t_list **stack);
 int		min_nbr(t_list **stack);
+t_list	*ft_cost_pre_push_a(t_list **stack_a, t_list *tmp);
+t_list	*ft_cost_pre_usual(t_list **stack_a, t_list *tmp);
+void	ft_norme(int index, int index2, t_list **stack_b, t_list **stack_a);
 
 void	aff_stack(t_list *stack_a);
 

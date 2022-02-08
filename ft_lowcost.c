@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lowcost.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jrossett <jrossett@student.42.fr>          +#+  +:+       +#+        */
+/*   By: teambersaw <teambersaw@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/28 11:34:27 by jrossett          #+#    #+#             */
-/*   Updated: 2022/02/01 16:41:00 by jrossett         ###   ########.fr       */
+/*   Updated: 2022/02/08 16:44:55 by teambersaw       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -111,7 +111,22 @@ void	ft_bot_lowcost(t_list **stack, int index, char c)
 void	ft_push_lowcost(t_list **stack_a, t_list **stack_b, t_list *lowcost)
 {
 	int	index;
+	int	index2;
+	int	i;
+	t_list *lowa;
 
+	index = find_index_cost(stack_b, lowcost);
+	lowa = ft_cost_pre_push_a(stack_a, lowcost);
+	index2 = find_index_cost(stack_a, lowa);
+	if (index < index2)
+		i = index;
+	else
+		i = index2;
+	if (index > lstsize(stack_b) / 2 && index2 > lstsize(stack_a) / 2)
+		ft_norme(index, index2, stack_b, stack_a);
+	else if (index <= lstsize(stack_b) / 2 && index2 <= lstsize(stack_a) / 2)
+		while (i-- > 1)
+			ft_rr(stack_a, stack_b, "rr\n");
 	index = find_index_cost(stack_b, lowcost);
 	if (index > 1)
 		ft_top_lowcost(stack_b, index, 'b');

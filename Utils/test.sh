@@ -9,5 +9,6 @@ do
 		echo "KoooO"
 		echo $ARG
 	fi
+	echo $LN
 	./push_swap $ARG | ./checker_linux $ARG
 done
